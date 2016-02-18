@@ -1,20 +1,11 @@
-
-tableData = [['apples', 'oranges', 'cherries', 'banana'],
-             ['Alice', 'Bob', 'Carol', 'David'],
-             ['dogs', 'cats', 'moose', 'goose']]
-
-def tablePrinter(tableData):
-    i = 0;
-    
-    for i in range(0,len(tableData)):
-        #colWidths = [i] * len(tableData);
-        p=0;
-        for p in range(0,len(tableData[i])):
-            if ((p/3).is_integer() and p!=0):
-                print((str(tableData[i][p])).rjust(5), end="\n");
-            else:
-                print((str(tableData[i][p])).rjust(5), end="\t\t"); 
-        
-        
-tablePrinter(tableData);
-
+def printTable(tableData):
+    colWidths = [0]*len(tableData)
+    for col in range(len(tableData)):
+        for row in range(len(tableData[0])):
+            if len(tableData[col][row]) > colWidths[col]:
+                colWidths[col] = len(tableData[col][row])
+    for row in range(len(tableData[0])):
+        for col in range(len(tableData)):
+            print(tableData[col][row].rjust(colWidths[col]),end=" ")
+        print("")
+printTable(tableData)
