@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 app.debug = True
 @app.route('/')
+app.debug = True
 def index():
     return "Hello, World!"
     
