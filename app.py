@@ -10,7 +10,7 @@ app.debug = True
 app.debug = True
 def index():
     return "Hello, World!"
-    
+ app.debug = True   
     
 c14554 = {
 	"name": "c14554",
